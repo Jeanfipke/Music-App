@@ -50,9 +50,10 @@ class Search extends Component {
                   />
                   <button
                     data-testid="search-artist-button"
-                    type="button"
+                    type="submit"
                     disabled={ isButtonDisabled }
-                    onClick={ async () => {
+                    onClick={ async (event) => {
+                      event.preventDefault();
                       this.setState({ isLoading: true });
                       this.setState({
                         album: await searchAlbunsAPIs(artistChosen),

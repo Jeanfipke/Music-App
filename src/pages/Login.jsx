@@ -43,10 +43,11 @@ class Login extends Component {
                       value={ login }
                     />
                     <button
-                      type="button"
+                      type="submit"
                       data-testid="login-submit-button"
                       disabled={ isButtonDisabled }
-                      onClick={ async () => {
+                      onClick={ async (event) => {
+                        event.preventDefault();
                         this.setState({ isLoading: true });
                         await createUser({ name: login });
                         history.push('/search');
@@ -65,7 +66,9 @@ class Login extends Component {
 }
 
 Login.propTypes = {
-  history: PropTypes.string.isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
 };
 
 export default Login;
