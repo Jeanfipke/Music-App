@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
+import MusicCard from './MusicCard';
 
 class Album extends Component {
   state = {
@@ -16,29 +17,7 @@ class Album extends Component {
   maplegal = () => {
     const { music, albumInfo } = this.state;
     return (
-      <div>
-        <h2 data-testid="artist-name">{ albumInfo.artistName }</h2>
-        <h2 data-testid="album-name">{ albumInfo.collectionName }</h2>
-        {
-          music.map((test) => (
-            <div key={ test.trackId }>
-              <p>{ test.trackName }</p>
-              <audio
-                data-testid="audio-component"
-                src="{test.previewUrl}"
-                controls
-              >
-                <track kind="captions" />
-                O seu navegador não suporta o elemento
-                {' '}
-                {' '}
-                <code>audio</code>
-                .
-              </audio>
-            </div>
-          ))
-        }
-      </div>
+      <MusicCard albumInfo={ albumInfo } music={ music } />
     );
   };
 
