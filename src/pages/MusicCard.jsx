@@ -9,10 +9,15 @@ class MusicCard extends Component {
     isLoading: false,
   };
 
-  isChecked = async ({ target: { id } }) => {
+  componentDidMount() {
+    this.isChecked();
+  }
+
+  isChecked = async () => {
+    const { song } = this.props;
     const result = await getFavoriteSongs();
-    const data = result.some((song) => song.trackId === id);
-    this.setState({ isChecked: !data });
+    const data = result.some((music) => music.trackId === song.trackId);
+    this.setState({ isChecked: data });
   };
 
   render() {
@@ -43,13 +48,13 @@ class MusicCard extends Component {
                     id={ song.trackId }
                     type="checkbox"
                     checked={ isChecked }
-                    onChange={ (event) => {
-                      this.isChecked(event);
+                    onChange={ () => {
                       this.setState({
                         isLoading: true,
                       }, async () => {
                         await addSong(song);
                         this.setState({ isLoading: false });
+                        this.isChecked();
                       });
                     } }
                   />
