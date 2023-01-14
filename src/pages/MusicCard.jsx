@@ -53,8 +53,8 @@ class MusicCard extends Component {
                         isLoading: true,
                       }, async () => {
                         await addSong(song);
+                        await this.isChecked();
                         this.setState({ isLoading: false });
-                        this.isChecked();
                       });
                     } }
                   />

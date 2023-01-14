@@ -82,6 +82,7 @@ class Search extends Component {
             searchResult ? (
               <p className="results">
                 Resultado de álbuns de:
+                {' '}
                 { artistChosenPrint }
               </p>
             ) : (
