@@ -1,0 +1,8 @@
+.song-div {
+  align-items: center;
+  display: flex;
+}
+
+.loading {
+  width: 10rem;
+}

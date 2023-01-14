@@ -1,0 +1,42 @@
+.search-background {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+.search-form {
+  background-color: blue;
+  height: 25vh;
+  width: 100%;
+}
+
+.albuns-div {
+  align-items: center;
+  color: blue;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  height: 75vh;
+  justify-content: center;
+  overflow-y: scroll;
+}
+
+.album-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 1rem;
+  width: 20rem;
+}
+
+.content img {
+  border-radius: 1rem;
+  width: 20rem;
+}
+

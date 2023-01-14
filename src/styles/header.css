@@ -1,0 +1,13 @@
+.header-background {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+  width: 30rem;
+}
+
+.logo {
+  margin-top: 3.35rem;
+  width: 17rem;
+}

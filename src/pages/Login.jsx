@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { createUser } from '../services/userAPI';
 import Loading from '../components/Loading';
+import '../styles/login.css';
+import logo from '../images/logo.svg';
 
 class Login extends Component {
   state = {
@@ -26,22 +28,24 @@ class Login extends Component {
     const { login, isButtonDisabled, isLoading } = this.state;
     const { history } = this.props;
     return (
-      <div data-testid="page-login">
-        {
-          isLoading ? <Loading />
-            : (
-              <>
-                <p>TrybeTunes</p>
-                <form>
-                  <label htmlFor="name-input">
-                    <input
-                      id="name-input"
-                      type="text"
-                      placeholder="Insira seu nome"
-                      data-testid="login-name-input"
-                      onChange={ this.handleChangeName }
-                      value={ login }
-                    />
+      <div className="login-background">
+        <div className="div-login" data-testid="page-login">
+          {
+            isLoading ? <Loading />
+              : (
+                <>
+                  <img src={ logo } alt="logo trybe tunes" />
+                  <form className="login-form">
+                    <label htmlFor="name-input">
+                      <input
+                        id="name-input"
+                        type="text"
+                        placeholder="Qual é o seu nome?"
+                        data-testid="login-name-input"
+                        onChange={ this.handleChangeName }
+                        value={ login }
+                      />
+                    </label>
                     <button
                       type="submit"
                       data-testid="login-submit-button"
@@ -53,13 +57,13 @@ class Login extends Component {
                         history.push('/search');
                       } }
                     >
-                      Entrar
+                      ENTRAR
                     </button>
-                  </label>
-                </form>
-              </>
-            )
-        }
+                  </form>
+                </>
+              )
+          }
+        </div>
       </div>
     );
   }

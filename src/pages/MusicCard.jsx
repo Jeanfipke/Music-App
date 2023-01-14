@@ -1,70 +1,73 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { addSong } from '../services/favoriteSongsAPI';
+import { addSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
+import '../styles/musicCard.css';
 
 class MusicCard extends Component {
   state = {
+    isChecked: false,
     isLoading: false,
   };
 
+  isChecked = async ({ target: { id } }) => {
+    const result = await getFavoriteSongs();
+    const data = result.some((song) => song.trackId === id);
+    this.setState({ isChecked: !data });
+  };
+
   render() {
-    const { music, albumInfo } = this.props;
-    const { isLoading } = this.state;
+    const { song } = this.props;
+    const { isLoading, isChecked } = this.state;
     return (
-      <div>
-        {
-          isLoading
-            ? (
-              <h2>Carregando...</h2>
-            ) : (
-              <div>
-                <h2 data-testid="artist-name">{ albumInfo.artistName }</h2>
-                <h2 data-testid="album-name">{ albumInfo.collectionName }</h2>
-                {
-                  music.map((test) => (
-                    <div key={ test.trackId }>
-                      <p>{ test.trackName }</p>
-                      <audio
-                        data-testid="audio-component"
-                        src={ test.previewUrl }
-                        controls
-                      >
-                        <track kind="captions" />
-                        O seu navegador não suporta o elemento
-                        <code>audio</code>
-                        .
-                      </audio>
-                      <label htmlFor="favorite-song">
-                        Favorita
-                        <input
-                          data-testid={ `checkbox-music-${test.trackId}` }
-                          id="favorite-song"
-                          type="checkbox"
-                          onChange={ async () => {
-                            this.setState({
-                              isLoading: true,
-                            });
-                            await addSong({ test });
-                            this.setState({ isLoading: false });
-                          } }
-                        />
-                      </label>
-                    </div>
-                  ))
-                }
-              </div>
-            )
-        }
+      <div key={ song.trackId }>
+        <p>{ song.trackName }</p>
+        <div className="song-div">
+          <audio
+            data-testid="audio-component"
+            src={ song.previewUrl }
+            controls
+          >
+            <track kind="captions" />
+            O seu navegador não suporta o elemento
+            <code>audio</code>
+          </audio>
+          {
+            isLoading
+              ? (
+                <div className="loading">Carregando...</div>
+              ) : (
+                <label htmlFor="favorite-song">
+                  Favorita
+                  <input
+                    data-testid={ `checkbox-music-${song.trackId}` }
+                    id={ song.trackId }
+                    type="checkbox"
+                    checked={ isChecked }
+                    onChange={ (event) => {
+                      this.isChecked(event);
+                      this.setState({
+                        isLoading: true,
+                      }, async () => {
+                        await addSong(song);
+                        this.setState({ isLoading: false });
+                      });
+                    } }
+                  />
+                </label>
+              )
+          }
+        </div>
       </div>
     );
   }
 }
 
 MusicCard.propTypes = {
-  music: PropTypes.arrayOf(Object).isRequired,
-  albumInfo: PropTypes.shape({
-    artistName: PropTypes.string.isRequired,
-    collectionName: PropTypes.string.isRequired,
+  song: PropTypes.shape({
+    trackId: PropTypes.number.isRequired,
+    trackName: PropTypes.string.isRequired,
+    previewUrl: PropTypes.string.isRequired,
+
   }).isRequired,
 };
 
