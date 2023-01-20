@@ -6,3 +6,8 @@
 .loading {
   width: 10rem;
 }
+
+.like-btn {
+  height: 2rem;
+  width: 2rem;
+}

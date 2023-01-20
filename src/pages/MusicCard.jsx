@@ -13,9 +13,9 @@ class MusicCard extends Component {
     this.isChecked();
   }
 
-  verifyCheckBox = async ({ target }) => {
+  verifyCheckBox = async ({ target: { checked } }) => {
     const { song } = this.props;
-    if (!target.checked) {
+    if (!checked) {
       await removeSong(song);
     } else {
       await addSong(song);
@@ -50,9 +50,10 @@ class MusicCard extends Component {
               ? (
                 <div className="loading">Carregando...</div>
               ) : (
-                <label htmlFor="favorite-song">
+                <label htmlFor={ song.trackId }>
                   Favorita
                   <input
+                    className="like-btn"
                     data-testid={ `checkbox-music-${song.trackId}` }
                     id={ song.trackId }
                     type="checkbox"
