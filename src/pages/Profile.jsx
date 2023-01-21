@@ -1,11 +1,60 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../components/Header';
+import { getUser } from '../services/userAPI';
+import '../styles/profile.css';
+import Loading from '../components/Loading';
 
 class Profile extends Component {
+  state = {
+    userInfo: {},
+    isLoading: false,
+  };
+
+  componentDidMount() {
+    this.saveUserInState();
+  }
+
+  saveUserInState = async () => {
+    this.setState({
+      isLoading: true,
+    }, async () => {
+      const userInfo = await getUser();
+      this.setState({
+        userInfo,
+        isLoading: false,
+      });
+    });
+  };
+
   render() {
+    const { userInfo: { name, email, description, pictureUrl }, isLoading } = this.state;
     return (
-      <div data-testid="page-profile">
+      <div className="profile-background" data-testid="page-profile">
         <Header />
+        <div className="profile-main-content">
+          {
+            isLoading ? (
+              <Loading />
+            ) : (
+              <div className="profile-content">
+                <h3>Nome</h3>
+                <p>{ name }</p>
+                <h3>Email</h3>
+                <p>{ email }</p>
+                <h3>Descrição</h3>
+                <p>{ description }</p>
+                <img
+                  data-testid="profile-image"
+                  src={ pictureUrl || 'url-to-image' }
+                  alt="Foto de perfil"
+                  width="100px"
+                />
+                <Link to="/profile/edit">Editar perfil</Link>
+              </div>
+            )
+          }
+        </div>
       </div>
     );
   }
