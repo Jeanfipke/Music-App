@@ -13,7 +13,10 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Switch>
-          <Route path="/profile/edit" component={ ProfileEdit } />
+          <Route
+            path="/profile/edit"
+            render={ (params) => <ProfileEdit { ...params } /> }
+          />
           <Route path="/profile" component={ Profile } />
           <Route path="/favorites" component={ Favorites } />
           <Route path="/album/:id" render={ (params) => <Album { ...params } /> } />

@@ -1,0 +1,19 @@
+.profile-background {
+  display: flex;
+}
+
+.profile-main-content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: calc(100% - 30rem);
+}
+
+.profile-content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: calc(100% - 30rem);
+}

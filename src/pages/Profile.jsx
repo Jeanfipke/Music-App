@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Header from '../components/Header';
 import { getUser } from '../services/userAPI';
-import '../styles/profile.css';
+import Header from '../components/Header';
 import Loading from '../components/Loading';
+import '../styles/profile.css';
 
 class Profile extends Component {
   state = {
@@ -20,6 +20,7 @@ class Profile extends Component {
       isLoading: true,
     }, async () => {
       const userInfo = await getUser();
+      console.log(userInfo);
       this.setState({
         userInfo,
         isLoading: false,
@@ -28,7 +29,7 @@ class Profile extends Component {
   };
 
   render() {
-    const { userInfo: { name, email, description, pictureUrl }, isLoading } = this.state;
+    const { userInfo: { name, email, description, image }, isLoading } = this.state;
     return (
       <div className="profile-background" data-testid="page-profile">
         <Header />
@@ -46,7 +47,7 @@ class Profile extends Component {
                 <p>{ description }</p>
                 <img
                   data-testid="profile-image"
-                  src={ pictureUrl || 'url-to-image' }
+                  src={ image }
                   alt="Foto de perfil"
                   width="100px"
                 />
