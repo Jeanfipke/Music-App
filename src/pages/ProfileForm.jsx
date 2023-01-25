@@ -73,6 +73,7 @@ class ProfileForm extends Component {
                 value={ userName }
                 data-testid="edit-input-name"
                 onChange={ this.handleChange }
+                placeholder="Digite seu nome"
               />
               <input
                 name="email"
@@ -80,6 +81,8 @@ class ProfileForm extends Component {
                 value={ email }
                 data-testid="edit-input-email"
                 onChange={ this.handleChange }
+                placeholder="Digite seu email"
+
               />
               <input
                 name="description"
@@ -87,6 +90,7 @@ class ProfileForm extends Component {
                 value={ description }
                 data-testid="edit-input-description"
                 onChange={ this.handleChange }
+                placeholder="Digite uma descrição"
               />
               <input
                 name="image"
@@ -94,6 +98,7 @@ class ProfileForm extends Component {
                 value={ image }
                 data-testid="edit-input-image"
                 onChange={ this.handleChange }
+                placeholder="Cole o link de uma imagem"
               />
               <button
                 type="submit"

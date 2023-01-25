@@ -1,11 +1,29 @@
+.favorite-title {
+  align-items: center;
+  background-color: rgb(47, 170, 179);
+  color: #191b24;
+  display: flex;
+  height: 20rem;
+  justify-content: center;
+}
+
 .favorite-background {
   display: flex;
+  height: 100vh;
 }
 
 .favorites-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: scroll;
+  width: calc(100% - 30rem);
+}
+
+.favorite-songs {
   align-items: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  width: calc(100% - 30rem);
+  height: calc(100% - 20rem);
+  width: 100%;
 }

@@ -11,3 +11,23 @@
   height: 2rem;
   width: 2rem;
 }
+
+.music-card {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-block: 1rem;
+  width: 70rem;
+}
+
+.song-name {
+  height: 2.2rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 32rem;
+}
+
+audio {
+  background-color: rgb(0, 217, 255);
+}

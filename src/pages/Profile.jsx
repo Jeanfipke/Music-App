@@ -4,6 +4,7 @@ import { getUser } from '../services/userAPI';
 import Header from '../components/Header';
 import Loading from '../components/Loading';
 import '../styles/profile.css';
+import userPic from '../userPic.png';
 
 class Profile extends Component {
   state = {
@@ -38,20 +39,23 @@ class Profile extends Component {
             isLoading ? (
               <Loading />
             ) : (
-              <div className="profile-content">
-                <h3>Nome</h3>
-                <p>{ name }</p>
-                <h3>Email</h3>
-                <p>{ email }</p>
-                <h3>Descrição</h3>
-                <p>{ description }</p>
+              <div className="profile-page">
                 <img
+                  className="profile-pic"
                   data-testid="profile-image"
-                  src={ image }
+                  src={ image || userPic }
                   alt="Foto de perfil"
-                  width="100px"
+                  width="200px"
                 />
-                <Link to="/profile/edit">Editar perfil</Link>
+                <div className="profile-content">
+                  <h3>Nome</h3>
+                  <p>{ name || 'Defina um nome' }</p>
+                  <h3>Email</h3>
+                  <p>{ email || 'Nenhum e-mail cadastrado' }</p>
+                  <h3>Descrição</h3>
+                  <p>{ description || 'Sem descrição' }</p>
+                  <Link to="/profile/edit" className="edit-btn">Editar perfil</Link>
+                </div>
               </div>
             )
           }

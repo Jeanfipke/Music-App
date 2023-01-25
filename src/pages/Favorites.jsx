@@ -29,17 +29,22 @@ class Favorites extends Component {
       <div className="favorite-background" data-testid="page-favorites">
         <Header />
         <div className="favorites-content">
+          <h2 className="favorite-title">Músicas Favoritas</h2>
           {
             isLoading ? (
               <Loading />
             ) : (
-              favoriteSongs.map((song) => (
-                <MusicCard
-                  isLoading={ isLoading }
-                  key={ song.trackId }
-                  song={ song }
-                />
-              ))
+              <div className="favorite-songs">
+                {
+                  favoriteSongs.map((song) => (
+                    <MusicCard
+                      isLoading={ isLoading }
+                      key={ song.trackId }
+                      song={ song }
+                    />
+                  ))
+                }
+              </div>
             )
           }
         </div>

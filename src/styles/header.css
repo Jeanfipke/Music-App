@@ -1,5 +1,7 @@
 .header-background {
   align-items: center;
+  background-color: rgb(34, 85, 94);
+  color: white;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -10,4 +12,33 @@
 .logo {
   margin-top: 3.35rem;
   width: 17rem;
+}
+
+.buttons-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-btn {
+  align-items: center;
+  color: white;
+  display: flex;
+  height: 5.5rem;
+  text-decoration: none;
+}
+
+.userName {
+  align-items: center;
+  display: flex;
+  font-size: 2rem;
+  justify-content: center;
+  margin-bottom: 3.35rem;
+}
+
+.userName img {
+  border-radius: 100%;
+  height: 4rem;
+  margin-right: 1rem;
+  object-fit: cover;
+  width: 4rem;
 }

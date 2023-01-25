@@ -33,10 +33,11 @@ class MusicCard extends Component {
     const { song } = this.props;
     const { isLoading, isChecked } = this.state;
     return (
-      <div key={ song.trackId }>
-        <p>{ song.trackName }</p>
+      <div className="music-card" key={ song.trackId }>
+        <p className="song-name">{ song.trackName }</p>
         <div className="song-div">
           <audio
+            className="song-preview"
             data-testid="audio-component"
             src={ song.previewUrl }
             controls

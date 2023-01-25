@@ -6,14 +6,17 @@
 }
 
 .search-form {
-  background-color: blue;
+  align-items: center;
+  background-color: rgb(47, 170, 179);
+  display: flex;
   height: 25vh;
+  justify-content: center;
   width: 100%;
 }
 
 .albuns-div {
   align-items: center;
-  color: blue;
+  color: white;
   display: flex;
   flex-direction: column;
   width: 100%;

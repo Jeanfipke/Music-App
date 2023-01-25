@@ -4,6 +4,7 @@ import { getUser } from '../services/userAPI';
 import Loading from './Loading';
 import logo from '../images/logo.svg';
 import '../styles/header.css';
+import userPic from '../userPic.png';
 
 class Header extends Component {
   state = {
@@ -20,15 +21,41 @@ class Header extends Component {
     return (
       <div className="header-background" data-testid="header-component">
         <img className="logo" src={ logo } alt="trybe tunes logo" />
-        <Link to="/search" data-testid="link-to-search">Procure um música</Link>
-        <Link to="/favorites" data-testid="link-to-favorites">Favoritos</Link>
-        <Link to="/profile" data-testid="link-to-profile">Perfil</Link>
+        <div className="buttons-header">
+          <Link
+            className="nav-btn"
+            to="/search"
+            data-testid="link-to-search"
+          >
+            Procure uma música
+          </Link>
+          <Link
+            className="nav-btn"
+            to="/favorites"
+            data-testid="link-to-favorites"
+          >
+            Favoritos
+          </Link>
+          <Link
+            className="nav-btn"
+            to="/profile"
+            data-testid="link-to-profile"
+          >
+            Perfil
+          </Link>
+        </div>
         {
           isLoading ? <Loading />
             : (
-              <p data-testid="header-user-name">
-                { JSON.parse(localStorage.getItem('user')).name }
-              </p>
+              <div className="userName">
+                <img
+                  src={ JSON.parse(localStorage.getItem('user')).image || userPic }
+                  alt="userPic"
+                />
+                <p data-testid="header-user-name">
+                  { JSON.parse(localStorage.getItem('user')).name }
+                </p>
+              </div>
             )
         }
       </div>
