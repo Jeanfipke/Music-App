@@ -1,6 +1,6 @@
 .login-background {
   align-items: center;
-  background-color: #191b24;
+  background-color: #3ab1ab;
   display: flex;
   height: 100vh;
   justify-content: center;
@@ -8,8 +8,8 @@
 
 .div-login {
   align-items: center;
-  background-color: rgb(47, 170, 179);
-  border-radius: 2rem;
+  background-color: #191b24;
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
   height: 45rem;
@@ -25,9 +25,10 @@
 }
 
 input {
-  border: 0.1rem solid #191b24;
-  border-radius: 10rem;
-  color: #191b24;
+  background-color: white;
+  border: 1px solid rgb(153, 153, 153);
+  border-radius: 100px;
+  color: rgb(100, 100, 100);
   height: 4rem;
   margin-bottom: 0.9rem;
   text-align: center;
@@ -35,12 +36,13 @@ input {
 }
 
 ::placeholder {
-  color: #191b24;
+  color: rgb(153, 153, 153);
   opacity: 1;
 }
 
 button {
-  background-color: #191b24;
+  background-color: #3ab1ab;
+  border: none;
   border-radius: 10rem;
   color: white;
   height: 4rem;
@@ -48,11 +50,13 @@ button {
   width: 40rem;
 }
 
+button:enabled:hover {
+  scale: 102%;
+  transition: 0.3s;
+}
+
 :disabled {
-  background-color: #191b2481;
-  border-radius: 10rem;
+  background-color: #3ab1ab85;
+  border: none;
   color: rgba(255, 255, 255, 0.493);
-  height: 4rem;
-  text-align: center;
-  width: 40rem;
 }

@@ -7,9 +7,26 @@
   width: 10rem;
 }
 
-.like-btn {
-  height: 2rem;
-  width: 2rem;
+.like-checkbox {
+  display: none;
+}
+
+.like-label {
+  align-items: center;
+  display: flex;
+}
+
+.like-label > span {
+  background: url('../Vector3.svg') no-repeat;
+  background-size: contain;
+  display: block;
+  height: 3rem;
+  width: 3rem;
+}
+
+.like-checkbox:checked + span {
+  background-image: url('../Vector4.svg');
+  display: inline-block;
 }
 
 .music-card {
@@ -30,4 +47,10 @@
 
 audio {
   background-color: rgb(0, 217, 255);
+  margin-right: 4rem;
+}
+
+.index {
+  color: rgb(173, 173, 173);
+  margin-right: 1rem;
 }

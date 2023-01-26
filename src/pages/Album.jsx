@@ -33,14 +33,29 @@ class Album extends Component {
       <div className="album-background" data-testid="page-album">
         <Header />
         <div className="songs">
-          <div>
-            <h2 data-testid="artist-name">{ albumInfo.artistName }</h2>
-            <h2 data-testid="album-name">{ albumInfo.collectionName }</h2>
+          <div className="album-info-wrap">
+            <img
+              width="250px"
+              src={ albumInfo.artworkUrl100 }
+              alt="album cover"
+            />
+            <div className="album-info">
+              <h2
+                className="album-title"
+                data-testid="album-name"
+              >
+                { albumInfo.collectionName }
+              </h2>
+              <h2 data-testid="artist-name">{ albumInfo.artistName }</h2>
+            </div>
+          </div>
+          <div className="favorite-songs">
             {
-              music.map((song) => (
+              music.map((song, index) => (
                 <MusicCard
-                  isLoading={ isLoading }
+                  index={ index }
                   key={ song.trackId }
+                  isLoading={ isLoading }
                   song={ song }
                 />
               ))

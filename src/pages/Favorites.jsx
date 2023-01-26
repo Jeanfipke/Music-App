@@ -34,17 +34,14 @@ class Favorites extends Component {
             isLoading ? (
               <Loading />
             ) : (
-              <div className="favorite-songs">
-                {
-                  favoriteSongs.map((song) => (
-                    <MusicCard
-                      isLoading={ isLoading }
-                      key={ song.trackId }
-                      song={ song }
-                    />
-                  ))
-                }
-              </div>
+              favoriteSongs.map((song, index) => (
+                <MusicCard
+                  index={ index }
+                  isLoading={ isLoading }
+                  key={ song.trackId }
+                  song={ song }
+                />
+              ))
             )
           }
         </div>

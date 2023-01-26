@@ -42,8 +42,9 @@ class Search extends Component {
             {
               isLoading ? <Loading />
                 : (
-                  <>
+                  <div className="search-btns">
                     <input
+                      className="input-search"
                       placeholder="digite o nome de um artista ou banda"
                       type="text"
                       data-testid="search-artist-input"
@@ -51,6 +52,7 @@ class Search extends Component {
                       value={ artistChosen }
                     />
                     <button
+                      className="btn-search"
                       data-testid="search-artist-button"
                       type="submit"
                       disabled={ isButtonDisabled }
@@ -72,18 +74,16 @@ class Search extends Component {
                         });
                       } }
                     >
-                      Pesquisar
+                      Procurar
                     </button>
-                  </>
+                  </div>
                 )
             }
           </form>
           {
             searchResult ? (
               <p className="results">
-                Resultado de álbuns de:
-                {' '}
-                { artistChosenPrint }
+                {`Resultado de álbuns de: ${artistChosenPrint}`}
               </p>
             ) : (
               <p />

@@ -1,11 +1,29 @@
 .album-background {
   display: flex;
+  height: 100vh;
 }
 
 .songs {
   align-items: center;
   display: flex;
   flex-direction: column;
+  overflow: scroll;
+  width: calc(100% - 30rem);
+}
+
+.album-info-wrap {
+  display: flex;
+  margin-block: 5rem;
+  width: 70rem;
+}
+
+.album-info {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  width: 100%;
+  margin-left: 10rem;
+}
+
+.album-title {
+  font-size: 3.5rem;
 }

@@ -6,6 +6,7 @@
   flex-direction: column;
   height: 100vh;
   justify-content: space-between;
+  padding-bottom: 3.35rem;
   width: 30rem;
 }
 
@@ -32,7 +33,6 @@
   display: flex;
   font-size: 2rem;
   justify-content: center;
-  margin-bottom: 3.35rem;
 }
 
 .userName img {

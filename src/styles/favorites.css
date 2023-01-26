@@ -1,22 +1,26 @@
-.favorite-title {
-  align-items: center;
-  background-color: rgb(47, 170, 179);
-  color: #191b24;
-  display: flex;
-  height: 20rem;
-  justify-content: center;
-}
-
 .favorite-background {
   display: flex;
   height: 100vh;
 }
 
+.favorite-title {
+  align-items: center;
+  background-color: rgb(47, 170, 179);
+  color: white;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4rem;
+  padding-block: 5.5rem;
+  width: 100%;
+}
+
 .favorites-content {
+  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   overflow: scroll;
+  padding-bottom: 4rem;
   width: calc(100% - 30rem);
 }
 
@@ -24,6 +28,6 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  height: calc(100% - 20rem);
+  margin-block: 5rem;
   width: 100%;
 }

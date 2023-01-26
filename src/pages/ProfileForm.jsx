@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { updateUser } from '../services/userAPI';
 import Loading from '../components/Loading';
+import '../styles/profileForm.css';
 
 class ProfileForm extends Component {
   state = {
@@ -66,7 +67,7 @@ class ProfileForm extends Component {
           isLoading ? (
             <Loading />
           ) : (
-            <form>
+            <form className="form-edit">
               <input
                 name="userName"
                 type="text"
