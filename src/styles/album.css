@@ -27,3 +27,7 @@
 .album-title {
   font-size: 3.5rem;
 }
+
+hr {
+  width: 70rem;
+}

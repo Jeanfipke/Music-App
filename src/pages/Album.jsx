@@ -49,6 +49,7 @@ class Album extends Component {
               <h2 data-testid="artist-name">{ albumInfo.artistName }</h2>
             </div>
           </div>
+          <hr />
           <div className="favorite-songs">
             {
               music.map((song, index) => (

@@ -5,6 +5,9 @@ import Loading from './Loading';
 import logo from '../images/logo.svg';
 import '../styles/header.css';
 import userPic from '../userPic.png';
+import Vector from '../Vector.svg';
+import Vector1 from '../Vector1.svg';
+import perfil from '../perfil.svg';
 
 class Header extends Component {
   state = {
@@ -22,27 +25,36 @@ class Header extends Component {
       <div className="header-background" data-testid="header-component">
         <img className="logo" src={ logo } alt="trybe tunes logo" />
         <div className="buttons-header">
-          <Link
-            className="nav-btn"
-            to="/search"
-            data-testid="link-to-search"
-          >
-            Procure uma música
-          </Link>
-          <Link
-            className="nav-btn"
-            to="/favorites"
-            data-testid="link-to-favorites"
-          >
-            Favoritos
-          </Link>
-          <Link
-            className="nav-btn"
-            to="/profile"
-            data-testid="link-to-profile"
-          >
-            Perfil
-          </Link>
+          <div className="header-btn">
+            <img src={ Vector } alt="vector" />
+            <Link
+              className="nav-btn"
+              to="/search"
+              data-testid="link-to-search"
+            >
+              Pesquisa
+            </Link>
+          </div>
+          <div className="header-btn">
+            <img src={ Vector1 } alt="" />
+            <Link
+              className="nav-btn"
+              to="/favorites"
+              data-testid="link-to-favorites"
+            >
+              Favoritos
+            </Link>
+          </div>
+          <div className="header-btn">
+            <img src={ perfil } alt="" />
+            <Link
+              className="nav-btn"
+              to="/profile"
+              data-testid="link-to-profile"
+            >
+              Perfil
+            </Link>
+          </div>
         </div>
         {
           isLoading ? <Loading />

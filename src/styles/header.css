@@ -10,14 +10,34 @@
   width: 30rem;
 }
 
+.header-btn {
+  align-items: center;
+  display: flex;
+  padding-inline: 10rem;
+  transition: 0.2s;
+  width: 100%;
+}
+
+.header-btn:hover {
+  background-color: rgba(255, 255, 255, 0.158);
+  transition: 0.3s;
+}
+
+.header-btn > img {
+  margin-right: 1rem;
+  width: 3rem;
+}
+
 .logo {
   margin-top: 3.35rem;
   width: 17rem;
 }
 
 .buttons-header {
+  align-items: center;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .nav-btn {

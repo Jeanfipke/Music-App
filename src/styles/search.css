@@ -33,7 +33,15 @@
   flex-direction: column;
   justify-content: space-around;
   margin: 1rem;
+  opacity: 0.5;
+  transition: 0.1s;
   width: 20rem;
+}
+
+.album-div:hover {
+  opacity: 1;
+  scale: 103%;
+  transition: 0.2s;
 }
 
 .content img {
