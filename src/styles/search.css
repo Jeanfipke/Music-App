@@ -89,6 +89,7 @@
   .search-background {
     flex-direction: column-reverse;
     height: 100%;
+    overflow-x: hidden;
   }
 
   .albuns-div {

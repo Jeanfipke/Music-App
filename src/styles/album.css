@@ -9,7 +9,7 @@
   flex-direction: column;
   overflow: scroll;
   overflow-x: hidden;
-  width: calc(100% - 30rem);
+  width: calc(100% - 20rem);
 }
 
 .album-info-wrap {

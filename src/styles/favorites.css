@@ -23,8 +23,9 @@
   flex-direction: column;
   justify-content: flex-start;
   overflow: scroll;
+  overflow-x: hidden;
   padding-bottom: 4rem;
-  width: calc(100% - 30rem);
+  width: calc(100% - 20rem);
 }
 
 .favorite-songs {
