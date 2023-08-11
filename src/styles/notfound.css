@@ -1,0 +1,56 @@
+.nf-div {
+  align-items: center;
+  background-image: linear-gradient(rgb(15, 120, 128), rgba(15, 120, 128, 0.891)) , url('../images/notes.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  width: 100vw;
+}
+
+.nf-div h1 {
+  font-size: 10rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nf-div p {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.div404 {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 10rem;
+}
+
+.div404 img {
+  margin-left: 3rem;
+  opacity: 93%;
+  width: 10rem;
+}
+
+.home-btn {
+  align-items: center;
+  background-color: #242f40;
+  border-radius: 1rem;
+  color: white;
+  display: flex;
+  font-size: 2rem;
+  font-weight: 700;
+  height: 5rem;
+  justify-content: center;
+  margin-top: 2rem;
+  width: 30rem;
+}
+
+.home-btn:hover {
+  background-color: #1a2230;
+  cursor: pointer;
+}

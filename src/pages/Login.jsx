@@ -34,13 +34,15 @@ class Login extends Component {
             isLoading ? <Loading />
               : (
                 <>
-                  <img src={ logo } alt="logo trybe tunes" />
+                  <h2 className="wellcome">Bem vindo ao Music App!</h2>
+                  <img src={ logo } alt="logo trybe tunes" className="logo" />
+                  <h3 className="login">LOGIN</h3>
                   <form className="login-form">
                     <label htmlFor="name-input">
                       <input
                         id="name-input"
                         type="text"
-                        placeholder="Qual é o seu nome?"
+                        placeholder="Digite seu nome"
                         data-testid="login-name-input"
                         onChange={ this.handleChangeName }
                         value={ login }

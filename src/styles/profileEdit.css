@@ -17,3 +17,20 @@
   justify-content: center;
   width: calc(100% - 30rem);
 }
+
+
+@media screen and ( max-width : 820px ), ( max-height : 1024px ) {
+
+  .profile-main-content input, button {
+    width: 30rem;
+  }
+
+}
+
+@media screen and ( max-width : 500px ), ( max-height : 500px ) {
+
+  .profile-main-content input, button {
+    width: 20rem;
+  }
+
+}

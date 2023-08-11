@@ -7,7 +7,6 @@ import '../styles/header.css';
 import userPic from '../userPic.png';
 import Vector from '../Vector.svg';
 import Vector1 from '../Vector1.svg';
-import perfil from '../perfil.svg';
 
 class Header extends Component {
   state = {
@@ -25,49 +24,39 @@ class Header extends Component {
       <div className="header-background" data-testid="header-component">
         <img className="logo" src={ logo } alt="trybe tunes logo" />
         <div className="buttons-header">
-          <div className="header-btn">
+          <Link
+            className="nav-btn"
+            to="/search"
+            data-testid="link-to-search"
+          >
             <img src={ Vector } alt="vector" />
-            <Link
-              className="nav-btn"
-              to="/search"
-              data-testid="link-to-search"
-            >
-              Pesquisa
-            </Link>
-          </div>
-          <div className="header-btn">
+            <p>Pesquisa</p>
+          </Link>
+          <Link
+            className="nav-btn"
+            to="/favorites"
+            data-testid="link-to-favorites"
+          >
             <img src={ Vector1 } alt="" />
-            <Link
-              className="nav-btn"
-              to="/favorites"
-              data-testid="link-to-favorites"
-            >
-              Favoritos
-            </Link>
-          </div>
-          <div className="header-btn">
-            <img src={ perfil } alt="" />
-            <Link
-              className="nav-btn"
-              to="/profile"
-              data-testid="link-to-profile"
-            >
-              Perfil
-            </Link>
-          </div>
+            <p>Favoritos</p>
+          </Link>
         </div>
         {
           isLoading ? <Loading />
             : (
-              <div className="userName">
+              <Link
+                className="nav-btn"
+                to="/profile"
+                data-testid="link-to-profile"
+              >
                 <img
                   src={ JSON.parse(localStorage.getItem('user')).image || userPic }
                   alt="userPic"
                 />
-                <p data-testid="header-user-name">
+                <p className="userName" data-testid="header-user-name">
                   { JSON.parse(localStorage.getItem('user')).name }
                 </p>
-              </div>
+              </Link>
             )
         }
       </div>
